@@ -19,27 +19,12 @@
  * needs please refer to http://www.magentocommerce.com for more information.
  *
  * @category   design_blank
- * @package    Mage
+ * @package    Mage_AmazonCheckout
  * @copyright  Copyright (c) 2008 Irubin Consulting Inc. DBA Varien (http://www.varien.com)
  * @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
 ?>
-<h4 class="product-name"><a href="<?php echo $this->getProductUrl() ?>"><?php echo $this->getProductName() ?></a></h4>
-<?php if ($_options = $this->getOptionList()):?>
-<dl class="item-options">
-    <?php foreach ($_options as $_option) : ?>
-    <?php $_formatedOptionValue = $this->getFormatedOptionValue($_option) ?>
-    <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-    <dd<?php if (isset($_formatedOptionValue['full_view'])): ?> class="truncated"<?php endif; ?>><?php echo $_formatedOptionValue['value'] ?>
-        <?php if (isset($_formatedOptionValue['full_view'])): ?>
-        <div class="truncated_full_value">
-            <dl class="item-options">
-                <dt><?php echo $this->htmlEscape($_option['label']) ?></dt>
-                <dd><?php echo $_formatedOptionValue['full_view'] ?></dd>
-            </dl>
-        </div>
-        <?php endif; ?>
-    </dd>
-    <?php endforeach; ?>
-</dl>
-<?php endif; ?>
+<?php $_code=$this->getMethodCode() ?>
+<ul class="form-list" id="payment_form_<?php echo $_code ?>" style="display:none;">
+    <li><?php echo $this->__('You will be redirected to Amazon Checkout website when you place an order.') ?></li>
+</ul>
