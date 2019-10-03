@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 This is a sample skeleton theme for Magento designers.
